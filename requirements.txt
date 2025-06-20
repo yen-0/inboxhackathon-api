@@ -4,3 +4,13 @@ httpx
 python-dotenv
 authlib
 itsdangerous
+line-bot-sdk
+google-api-python-client
+nest_asyncio    
+asgiref
+google-api-python-client
+google-auth-oauthlib
+google-auth-httplib2
+google-auth
+authlib
+httpx

@@ -2,8 +2,7 @@ from fastapi import FastAPI
 from fastapi.responses import PlainTextResponse
 from starlette.middleware.sessions import SessionMiddleware
 import os
-
-from routers import auth, analyze, generate, summarize, tasks
+from routers import auth, analyze, generate, summarize, tasks, webhook
 
 app = FastAPI(title="Embox API")
 @app.get("/", response_class=PlainTextResponse)
@@ -18,6 +17,7 @@ app.include_router(analyze.router, prefix="/analyze-sentiment", tags=["analysis"
 app.include_router(generate.router,prefix="/generate",           tags=["generation"])
 app.include_router(summarize.router,prefix="/summarize",         tags=["summarization"])
 app.include_router(tasks.router,   prefix="/tasks",              tags=["tasks"])
+app.include_router(webhook.router, prefix="", tags=["webhook"])
 import uvicorn
 
 if __name__ == "__main__":
